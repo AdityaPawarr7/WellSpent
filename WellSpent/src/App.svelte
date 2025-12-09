@@ -5,6 +5,7 @@
   import NavGrid from './NavGrid.svelte';
   import ApplianceRow from './ApplianceRow.svelte';
   import BarChart from './BarChart.svelte';
+
   // --- STATE ---
   let currentPage = 'dashboard'; // Options: 'dashboard', 'usage', 'limits', 'donate'
   
