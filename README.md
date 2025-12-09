@@ -1,21 +1,221 @@
-# WellSpent
+WellSpent
 
-It is a chance to bring together what you have learned about interface design and explore how UI can positively impact the world. 
+Publicly Hosted Website: https://well-spent.vercel.app/
 
-Description: 
+Youtube Demo Link:
 
-1. Pick a problem in the world that you think is important.   Hunger, poverty, addiction, loneliness, natural disasters, illness, conflict...  these are big problems.  Are there parts of this problem that you could isolate and work on?  Describe how a user interface could help address this problem, even if only in some small but meaningful way.  In your documentation describe your idea for how a UI could help.  I would envision people writing 2-4 paragraphs here, and including some sketches to help develop and illustrate your ideas.
+Description:
 
-WellSpent is an utility tracking app/website that is meant to track a household's water usage. Ideas for this were taken from Duke Energy's dashboard that I use for my electricity and gas usage. Based upon the usage, I tend to alter the usage and be more considerate of the appliances I'm using. 
+The world problem that I chose for this project is water conservation. I
+came to realize that water conservation is one of the least discussed
+topics in my life and there is nothing that I found that quantifies the
+amount of water we use. We always tell each other to conserve water and
+to be mindful about using water, but I thought if I could quantify the
+water we use and corelate to the impact it makes on our environment, we
+would be more inclined to be careful and set limits. This is what led to
+the creation of WellSpent.
 
-WellSpent aims to capture the usage of water for a household and breaking it down into specifics such individual tap usage, shower lengths, water quality, trends in water usage, and an option to donate to a non-profit organization determined to clean our water sources and promoting sustainable water practices. 
+WellSpent is a utility tracking app/website that is meant to track a
+household\'s water usage. Ideas for this were taken from Duke Energy\'s
+dashboard that I use for my electricity and gas usage. Based upon the
+usage, I tend to alter the usage and be more considerate of the
+appliances I\'m using.
 
-3. Design a basic prototype of a portion of this envisioned interface.   Consider what would illustrate your interesting and impactful idea.  It should be served publicly on the web, so we can interact with it. 
+WellSpent aims to capture the usage of water for a household and
+breaking it down into specifics such individual tap usage, shower
+lengths, water quality, trends in water usage, and an option to donate
+to a non-profit organization determined to clean our water sources and
+promoting sustainable water practices.
 
-The prototype for WellSpent started off from a spark from my Duke Energy metaphor to now creating the sketches as below. 
+The main theme is to make sure that the numbers regarding water supply
+are as visible as they can be and I believe WellSpent is the right step
+towards that as it is something that can be applied to each household
+(accessible) and will allow more people to be considerate of how much
+water they use and if they go over, they have the match the amount they
+went over their desired limit as a donation to water.org.
 
-Attached Sketches:
+Sketches:
 
-4. Document how the UI works, using text descriptions, screenshots and a demo video.  Follow the format we have used for previous projects.
+Design 1:
 
-Features of the UI: 
+This sketch has a general idea of what I want to see in a dashboard
+which would make sense for a consumer. Notice the dam feature--- that's
+supposed to indicate how much water you have left out of the limit that
+you chose. Obviously, this is not hardcoded to cut off your supply but
+rather a way to encourage you to develop good habits.
+
+![A diagram of tape measure AI-generated content may be
+incorrect.](assets/images/media/image1.png){width="5.958333333333333in"
+height="2.7083333333333335in"}
+
+Sketch 2:
+
+Sketch 2 builds upon Sketch 1. It adds in the Setting Limit
+functionality which allows for the user to set limits for each appliance
+for how much water they should be using. Notice how the dam from the
+previous sketch is now changed to represent a scenery of a lake. The
+idea behind this is if you go over the limit you set, the environment
+will turn into a desert helping you visualize the effects of your
+overconsumption of water.
+
+![A close-up of a paper AI-generated content may be
+incorrect.](assets/images/media/image2.png){width="5.763888888888889in"
+height="5.152777777777778in"}
+
+Sketch 3:
+
+This Sketch builds upon the features we started to implement in Sketch
+2. We add a tab about Learn More which ended up being a pay/donate tab
+in the final prototype. The Remote-Control functionality shows how you
+can turn on or off an appliance if you've forgotten helping you save
+water. The history page helps us visualize the usage of water over the
+last couple of months along with specific appliance-based usage which
+helps you understand the breakdown of how you're using your water.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](assets/images/media/image3.png){width="5.930555555555555in"
+height="7.555555555555555in"}
+
+Sketch 4:
+
+This was the final draft on which WellSpent ended up being based on. The
+scenery as highlighted before is on the left side along with an expected
+cost that we calculate based upon the limit we set for our appliances
+and the actual cost for comparison. The middle column shows the list of
+devices and the status it's in. The right column shows the water usage
+in liters. The final prototype moves the Water Usage tab to the left
+column and adds in a live flow activity graph and an appliance-specific
+usage graph.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](assets/images/media/image4.png){width="6.5in"
+height="3.417361111111111in"}
+
+Final Prototype:
+
+The final prototype consists of the main dashboard, view history, and
+donate tabs. The main dashboard is split into 3 specific columns. I'll
+go into detail below.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](assets/images/media/image5.png){width="6.5in"
+height="3.5097222222222224in"}
+
+For the Left Column, we have two possible scenarios for the scenery
+screen. Depending on if you've exceeded the limit or not, the scenery
+changes. If you're within the limit, it shows a green scenery showing
+how you're helping conserve water and if you're shown a desert, it means
+you're over the limit and need to be cautious of your water usage. The
+expected cost and target costs are additionally calculated based on what
+the limit you set for the month to be which can be edited using the
+pencil icon.
+
+![A screenshot of a phone AI-generated content may be
+incorrect.](assets/images/media/image6.png){width="1.8920122484689414in"
+height="3.2561417322834645in"}![A screenshot of a phone AI-generated
+content may be
+incorrect.](assets/images/media/image7.png){width="1.940365266841645in"
+height="3.242589676290464in"}![A screenshot of a computer AI-generated
+content may be
+incorrect.](assets/images/media/image8.png){width="2.262432195975503in"
+height="1.8719608486439194in"}
+
+Moving onto the middle column- this section shows us the different
+utilities that use water that we have. The top card shows the appliance
+that is selected and its status.
+
+![A screenshot of a phone AI-generated content may be
+incorrect.](assets/images/media/image9.png){width="3.8626290463692037in"
+height="4.548493000874891in"}
+
+If we click Start, it's going to light up green, and the shower icon
+will turn blue indicating that the utility is in use.
+
+![A screenshot of a device AI-generated content may be
+incorrect.](assets/images/media/image10.png){width="3.942230971128609in"
+height="3.631400918635171in"}
+
+A new utility can be added by using the "+Add Utility" button which
+allows to add a new utility and classify it into the defined types so it
+can be graphed. The limits set for the new utility are factored into the
+calculation of the monthly limits and the donation amount.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](assets/images/media/image11.png){width="3.3955369641294837in"
+height="3.7034853455818024in"}
+
+Now, let's move onto the right column, this consist of a live activity
+graph which updates the flow of water over the last 30 seconds
+constantly along with a static bar graph which is aimed to show the
+utility-by-utility distribution of water consumption.
+
+![A screenshot of a phone AI-generated content may be
+incorrect.](assets/images/media/image12.png){width="2.286496062992126in"
+height="4.053760936132983in"}
+
+The "View History" tab is a great way for us as users to ensure that we
+can see how our water consumption has changed based upon new habits or
+change in seasons. This page consists of the utility-distribution graph
+from above along with monthly water consumption graph (static). Along
+with the visuals, it also has the base to implement dynamic statements
+for different utilities to show the exact usage and cost. This feature,
+however is not implemented in the final prototype but the static data
+shows how effective it can be.
+
+![A screenshot of a computer AI-generated content may be
+incorrect.](assets/images/media/image13.png){width="6.5in"
+height="3.410416666666667in"}
+
+The donation page is something I'm quite proud of. It allows the user to
+pay their water bill at the end of each month and have two scenarios.
+
+Scenario 1:
+
+Your water usage was below the limit you set. You can pay the amount you
+owe and have the option to make a donation towards water.org.
+
+![A screenshot of a donation program AI-generated content may be
+incorrect.](assets/images/media/image14.png){width="6.5in"
+height="3.0854166666666667in"}
+
+Scenario 2:
+
+You have exceeded the limit for the month. You're going to have to pay
+your water bill and are recommended a donation amount which is based
+upon how much you've exceeded the limit in liters by and matching the
+cost that you would pay for it essentially multiplying the exceeded
+amount by 2. This allows for us to be more mindful when consuming water
+and not wasting.\
+\
+Yes, the link to water.org works!
+
+![A screenshot of a donation page AI-generated content may be
+incorrect.](assets/images/media/image15.png){width="6.5in"
+height="3.498611111111111in"}
+
+Use of AI:
+
+My use of AI in this assignment was mainly for the CSS for visual
+components that I found hard to code such as the graph, scenery, and the
+live flow chart. This along with continuous debugging on my end allowed
+me to understand these concepts and not just plainly copy-paste them as
+I knew what I wanted and was working towards a well-rounded
+understanding of these concepts while also being able to debug what AI
+helped me write.
+
+Future Work:
+
+I was pleasantly surprised with how passionate I got about this project.
+Initially, I was swaying between another habit tracker (sigh) and
+de-phone your life app (also sigh). I'm glad I ended up choosing this
+problem to fix with my UI.
+
+I believe the potential to this UI is quite limitless but for the sake
+of this assignment--- the main things that are left to implement is a
+working view history section which generates statements along with the
+graphs working, profile section which allows you to set-up your account
+and add your friends to see who has the lowest water consumption and
+also who doesn't shower if they have extremely low water consumption,
+and finally, the ability to view where your water is being supplied from
+along with the ability to view water outages and a Tips and Trick page
+to help promote good water conservation habits.
