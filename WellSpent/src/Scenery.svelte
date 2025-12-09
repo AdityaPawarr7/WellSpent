@@ -27,8 +27,8 @@
 
 <style>
   .scenery {
-    /* REVERTED: Back to standard height */
-    height: 180px;
+   
+    height: 250px;
     
     border-radius: 12px;
     overflow: hidden;
@@ -49,7 +49,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    padding-bottom: 10px; /* Adjusted padding back */
+    padding-bottom: 10px;
     transition: 0.5s;
   }
 

@@ -2,7 +2,7 @@
   export let expected = 0;
   export let target = 0;
   
-  // Calculate if we are over budget
+  // Calculate if over budget
   $: isOver = expected > target;
 </script>
 
@@ -26,7 +26,7 @@
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1.5rem;
-    display: flex;
+    display: inline-flex;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 1.5rem;

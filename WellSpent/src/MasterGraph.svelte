@@ -6,7 +6,7 @@
     { m: 'J', val: 180 }, { m: 'A', val: 170 }, { m: 'S', val: 140 }, 
     { m: 'O', val: 100 }, { m: 'N', val: 90 }, { m: 'D', val: 85 }
   ];
-  const max = 200; // Scale max
+  const max = 300; 
 </script>
 
 <div class="graph-card">
@@ -28,7 +28,7 @@
     border-radius: 12px;
     padding: 1.5rem;
     margin-bottom: 1rem;
-    pointer-events: none; /* Let parent handle click */
+    pointer-events: none; 
   }
   
   h4 { margin: 0 0 1rem 0; font-size: 0.9rem; color: var(--text-muted); }

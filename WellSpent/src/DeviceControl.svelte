@@ -1,13 +1,13 @@
 <script>
   import { createEventDispatcher } from 'svelte';
   
-  // Now accepts the whole device object
+  // Device object passed in from parent
   export let device = { name: 'Unknown', isOn: false };
 
   const dispatch = createEventDispatcher();
 
   function toggle(state) {
-    // Tell App.svelte to update this device
+   // Emit toggle event with device id and new state
     dispatch('toggle', { id: device.id, state: state });
   }
 </script>
@@ -37,7 +37,7 @@
     border-radius: 12px;
     padding: 1.5rem;
     text-align: center;
-    height: 100%;
+    height: 40%;
     display: flex; flex-direction: column; justify-content: space-between;
   }
 

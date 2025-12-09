@@ -29,15 +29,15 @@
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1.5rem;
-    margin-bottom: 1rem;
-    /* Removed flex properties */
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
   }
   
   .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
   h4 { margin: 0; font-size: 0.9rem; color: var(--text-muted); }
 
   .live-indicator { font-size: 0.7rem; font-weight: bold; color: #ef4444; display: flex; align-items: center; gap: 4px; }
-  .dot { width: 6px; height: 6px; background: #ef4444; border-radius: 50%; animation: pulse 1s infinite; }
+  .dot { width: 6px; height: 8px; background: #ef4444; border-radius: 50%; animation: pulse 1s infinite; }
 
   .chart {
     display: flex;
@@ -46,8 +46,7 @@
     gap: 3px;
     overflow: hidden;
     
-    /* REVERTED: Fixed height */
-    height: 100px;
+    height: 120px;
     width: 100%;
   }
 
@@ -57,7 +56,7 @@
     width: 100%;
     background: var(--primary);
     border-radius: 2px;
-    transition: height 0.2s ease;
+    transition: height 0.1s ease;
   }
 
   @keyframes pulse {

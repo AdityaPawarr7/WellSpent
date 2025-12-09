@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
   import { onMount, onDestroy } from 'svelte';
   import Header from './Header.svelte';
   import Scenery from './Scenery.svelte';
@@ -9,10 +11,10 @@
   import UtilityGraph from './UtilityGraph.svelte';
   import LiveGraph from './LiveGraph.svelte';
 
-  // --- CONFIG ---
+  // Cost per Liter usage in dollars.
   const COST_PER_LITER = 0.05; 
   
-  // Inclusive Icon Map
+  // Icons for different utility types
   const iconMap = {
     shower: '🚿', 
     tap: '💧',       
@@ -22,12 +24,15 @@
     washer: '🫧'     
   };
 
-  // --- STATE ---
+  // state of the application on startup
   let currentPage = 'dashboard'; 
   
   let devices = [
     { id: 1, name: "Master Shower", type: 'shower', limit: 100, usage: 45.5, isOn: false },
     { id: 2, name: "Kitchen Sink", type: 'tap', limit: 50, usage: 12.0, isOn: false },
+    { id: 3, name: "Garden Sprinklers", type: 'lawn', limit: 200, usage: 180.0, isOn: false },
+    { id: 4, name: "Dishwasher", type: 'dishwasher', limit: 30, usage: 30.0, isOn: false },
+
   ];
 
   let selectedId = 1;
@@ -38,7 +43,7 @@
   // Live Graph State
   let flowHistory = new Array(30).fill(0); 
 
-  // --- DERIVED STATE ---
+  // reactive declarations
   $: activeDevice = devices.find(d => d.id === selectedId) || devices[0];
   $: totalUsage = devices.reduce((sum, d) => sum + d.usage, 0);
   $: totalLimit = globalLimit; 
@@ -49,7 +54,7 @@
   $: overageAmount = Math.max(0, totalUsage - totalLimit);
   $: donationSuggestion = overageAmount * COST_PER_LITER;
 
-  // --- SIMULATION LOOP ---
+  // simulating live data updates
   let interval;
   onMount(() => {
     interval = setInterval(() => {
@@ -57,6 +62,7 @@
 
       devices = devices.map(d => {
         if (d.isOn) {
+          // Simulate flow rate between 0.1 to 0.5 L/s
           const flow = (Math.random() * 0.4 + 0.1);
           currentTickFlow += flow; 
           return { ...d, usage: d.usage + flow };
@@ -64,14 +70,15 @@
         return d;
       });
 
+      // Update live graph data
       flowHistory = [...flowHistory.slice(1), currentTickFlow];
-
     }, 1000); 
   });
 
   onDestroy(() => clearInterval(interval));
+  
 
-  // --- HANDLERS ---
+  // event handlers
   function handleToggle(event) {
     const { id, state } = event.detail;
     devices = devices.map(d => d.id === id ? { ...d, isOn: state } : d);
@@ -84,10 +91,12 @@
       id: Date.now(),
       name: formData.get('name'),
       type: formData.get('type'),
+      // @ts-ignore
       limit: parseFloat(formData.get('limit')),
       usage: 0,
       isOn: false
     };
+     // @ts-ignore
     devices = [...devices, newDevice];
     selectedId = newDevice.id;
     showAddModal = false;
@@ -96,6 +105,7 @@
   function handleUpdateLimit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
+     // @ts-ignore
     globalLimit = parseFloat(formData.get('limit'));
     showLimitModal = false;
   }
@@ -111,15 +121,19 @@
   <Header activePage={currentPage} on:nav={handleNav} />
 
   {#if currentPage === 'dashboard'}
+  <!-- svelte-ignore a11y_click_events_have_key_events -->
+  <!-- svelte-ignore a11y_no_static_element_interactions -->
   <main class="dashboard-grid fade-in">
     
     <div class="col-left">
-      <Scenery isOver={isOverBudget} />
-      <UsageSummary 
-        usage={totalUsage.toFixed(2)} 
-        limit={totalLimit} 
-        on:edit={() => showLimitModal = true} 
-      />
+      <div class="top-group">
+        <Scenery isOver={isOverBudget} />
+        <UsageSummary 
+          usage={totalUsage.toFixed(2)} 
+          limit={totalLimit} 
+          on:edit={() => showLimitModal = true} 
+        />
+      </div>
       <CostCard expected={totalCost} target={targetCost} />
     </div>
 
@@ -155,10 +169,15 @@
       </div>
     </div>
 
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
     <div class="col-right hover-active" on:click={() => currentPage = 'history'}>
-      <h3 class="section-title">Live Activity ›</h3>
-      <LiveGraph data={flowHistory} />
-      <UtilityGraph />
+      <div class="right-header">
+        <h3 class="section-title">Live Activity ›</h3>
+        <LiveGraph data={flowHistory} />
+      </div>
+      <div class="bottom-graph-container">
+        <UtilityGraph />
+      </div>
     </div>
 
   </main>
@@ -167,6 +186,7 @@
   <main class="history-grid fade-in">
     <div class="col-left">
       <div class="year-selector">
+        <!-- svelte-ignore a11y_label_has_associated_control -->
         <label>Statement Period:</label>
         <select>
           <option>2025 (Current)</option>
@@ -190,8 +210,17 @@
         <div class="s-row">
           <span>Dec 08</span><span>Sprinklers</span><span>180L</span><span>$9.00</span>
         </div>
+        <div class="s-row">
+          <span>Dec 07</span><span>Kitchen Sink</span><span>12L</span><span>$0.60</span>
+        </div>
+        <div class="s-row">
+          <span>Dec 06</span><span>Dishwasher</span><span>30L</span><span>$1.50</span>
+        </div>
+        <div class="s-row">
+          <span> Dec 05 </span><span> Tap </span> <span> 6.7L</span> <span>$0.67</span> 
+        </div>
+        </div>
       </div>
-    </div>
   </main>
 
   {:else if currentPage === 'donate'}
@@ -246,15 +275,19 @@
   {/if}
 
   {#if showAddModal}
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div class="modal-backdrop" on:click|self={() => showAddModal = false}>
       <div class="modal">
         <h2>Add New Utility</h2>
         <form on:submit={handleAddDevice}>
           <div class="input-group">
+            <!-- svelte-ignore a11y_label_has_associated_control -->
             <label>Name</label>
             <input type="text" name="name" placeholder="e.g. Guest Bathroom" required />
           </div>
           <div class="input-group">
+            <!-- svelte-ignore a11y_label_has_associated_control -->
             <label>Type</label>
             <select name="type">
               <option value="tap">Tap / Faucet</option>
@@ -266,6 +299,7 @@
             </select>
           </div>
           <div class="input-group">
+            <!-- svelte-ignore a11y_label_has_associated_control -->
             <label>Daily Limit (Liters)</label>
             <input type="number" name="limit" placeholder="100" required />
           </div>
@@ -279,11 +313,14 @@
   {/if}
 
   {#if showLimitModal}
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div class="modal-backdrop" on:click|self={() => showLimitModal = false}>
       <div class="modal">
         <h2>Set Monthly Target</h2>
         <form on:submit={handleUpdateLimit}>
           <div class="input-group">
+            <!-- svelte-ignore a11y_label_has_associated_control -->
             <label>Target Limit (Liters)</label>
             <input type="number" name="limit" value={globalLimit} required />
           </div>
@@ -303,38 +340,76 @@
   .fade-in { animation: fadeIn 0.3s ease; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
+  /* --- DASHBOARD GRID --- */
   .dashboard-grid {
     display: grid; 
     grid-template-columns: 1fr 1.5fr 1fr; 
-    gap: 1.5rem;
-    max-width: 1400px; 
+    gap: 2.0rem;
+    max-width: 1500px; 
     margin: 0 auto; 
     padding: 0 1.5rem; 
-    
-    /* REVERTED: Align items to start (top) instead of stretch */
-    align-items: start;
+    align-items: stretch; /* Forces all columns to be equal height */
   }
 
-  .col-left, .col-center { display: flex; flex-direction: column; gap: 1.5rem; }
-  
-  /* REVERTED: Removed height: 100% */
-  .col-right { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 1rem; 
-    padding: 0.5rem; 
+  /* Shared column styles for alignment */
+  .col-left, .col-center, .col-right {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Important: makes the column fill the grid cell */
+    gap: 1.5rem;
+  }
+
+  /* Left Column: Pushes cost card to bottom */
+  .col-left {
+    justify-content: space-between; 
+  }
+  .top-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Center Column: Utility Manager fills space */
+  .utility-manager { 
+    background: var(--bg-card); 
+    border: 1px solid var(--border); 
     border-radius: 12px; 
+    padding: 1.5rem; 
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  .col-right { 
+    border-radius: 12px; 
+  }
+  .bottom-graph-container {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bottom-graph-container :global(> div) {
+    height: 100%;
   }
   
   .hover-active:hover { background: rgba(255,255,255,0.03); cursor: pointer; }
-  .section-title { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; margin: 0 0 0.5rem 0.5rem; }
+  .section-title { font-size: 1.0rem; color: var(--text-muted); text-transform: uppercase; margin: 0 0 -0.5rem 0.5rem; }
 
-  /* --- UTILITY MANAGER --- */
-  .utility-manager { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
   .manager-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
   .manager-header h3 { margin: 0; font-size: 1.1rem; }
-  .master-add-btn { background: var(--primary); color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.9rem; }
-  .device-list { display: flex; flex-direction: column; gap: 0.5rem; max-height: 300px; overflow-y: auto; }
+  .master-add-btn { background: var(--primary); color: rgb(2, 2, 2); border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.9rem; }
+  
+  /* Make device list fill the now-taller utility manager */
+  .device-list { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.5rem; 
+    overflow-y: auto; 
+    flex: 1; /* Fills the rest of the card */
+  }
+  
   .device-item { background: transparent; border: 1px solid var(--border); border-radius: 8px; padding: 0.8rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: var(--text-muted); transition: 0.2s; }
   .device-item:hover { background: rgba(255,255,255,0.03); color: var(--text-main); }
   .device-item.selected { border-color: var(--primary); background: rgba(59, 130, 246, 0.1); color: var(--text-main); }
@@ -342,7 +417,7 @@
   .status-dot { width: 8px; height: 8px; background: #444; border-radius: 50%; display: block; }
   .device-item.running .status-dot { background: #22c55e; box-shadow: 0 0 6px #22c55e; }
 
-  /* --- OTHER VIEWS & MODALS --- */
+
   .history-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
   .year-selector { margin-bottom: 1rem; }
   .statement-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
@@ -362,7 +437,7 @@
   .penalty-info p, .success-box p { margin: 0; font-size: 0.9rem; opacity: 0.9; }
   .final-amount { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem; }
   .money { font-size: 3rem; font-weight: 800; color: var(--text-main); }
-  .donate-btn { background: var(--primary); color: white; width: 100%; padding: 1rem; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.2s; }
+  .donate-btn { background: var(--primary); color: rgb(0, 0, 0); width: 100%; padding: 1rem; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.2s; }
   .donate-btn:hover { background: var(--primary-hover); }
   .donate-btn.secondary { background: transparent; border: 1px solid var(--border); color: var(--text-muted); }
   .donate-btn.secondary:hover { border-color: var(--text-main); color: var(--text-main); }
@@ -373,6 +448,6 @@
   label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.9rem; }
   input, select { width: 100%; padding: 0.6rem; border-radius: 6px; border: 1px solid var(--border); background: #111; color: white; box-sizing: border-box; }
   .modal-actions { display: flex; gap: 1rem; margin-top: 1.5rem; }
-  .btn-save { background: var(--primary); color: white; border: none; padding: 0.6rem 1rem; border-radius: 6px; cursor: pointer; flex: 1; font-weight: bold; }
+  .btn-save { background: var(--primary); color: rgb(0, 0, 0); border: none; padding: 0.6rem 1rem; border-radius: 6px; cursor: pointer; flex: 1; font-weight: bold; }
   .btn-cancel { background: transparent; color: var(--text-muted); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 6px; cursor: pointer; }
 </style>

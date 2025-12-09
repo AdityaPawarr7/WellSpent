@@ -29,7 +29,7 @@
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: 2.5rem;
     text-align: center;
     position: relative;
   }

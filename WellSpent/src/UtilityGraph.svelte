@@ -4,8 +4,11 @@
   let utilities = [
     { name: 'Shower', val: 45, color: '#3b82f6' },
     { name: 'Sprinkler', val: 30, color: '#22c55e' },
-    { name: 'Tap', val: 15, color: '#fbbf24' },
-    { name: 'Dishwasher', val: 10, color: '#a855f7' }
+    { name: 'Tap', val: 25, color: '#fbbf24' },
+    { name: 'Dishwasher', val: 20, color: '#a855f7' },
+    { name: 'Toilet', val: 10, color: '#7FFFD4'},
+    { name: 'Washer', val: 30, color: '#808000' }
+
   ];
 </script>
 
@@ -33,18 +36,19 @@
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1.5rem;
+    border-bottom-width: 0capx;
     pointer-events: none;
   }
   
   h4 { margin: 0 0 1rem 0; font-size: 0.9rem; color: var(--text-muted); }
 
-  .bars-container { display: flex; flex-direction: column; gap: 0.8rem; }
+  .bars-container { display: flex; flex-direction: column; gap: 1.8rem; }
 
   .utility-row { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; }
   
   .u-info { width: 90px; display: flex; align-items: center; gap: 6px; color: var(--text-muted); }
   .u-dot { width: 8px; height: 8px; border-radius: 50%; }
-
+  .u-name { font-size: medium;flex: 1; }
   .u-track { flex: 1; height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden; }
   .u-bar { height: 100%; border-radius: 3px; }
 </style>
