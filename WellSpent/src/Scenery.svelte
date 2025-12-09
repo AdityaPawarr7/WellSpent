@@ -53,14 +53,12 @@
     transition: 0.5s;
   }
 
-  /* Drought State */
   .scenery.drought {
     background: linear-gradient(to bottom, #fbbf24, #fef3c7);
     border-color: #ef4444;
   }
   .scenery.drought .ground { background-color: #d97706; }
 
-  /* Elements */
   .tree-container { text-align: center; z-index: 2; }
   .icon { font-size: 3rem; display: block; filter: drop-shadow(0 4px 4px rgba(0,0,0,0.2)); transition: 0.3s; }
   
@@ -71,10 +69,9 @@
   }
   .status-text.warning { background: #ef4444; }
 
-  /* Sun Animation */
   .sun {
     position: absolute; top: 20px; right: 20px;
-    width: 40px; height: 40px; /* Smaller sun */
+    width: 40px; height: 40px; 
     background: #fde047; border-radius: 50%;
     box-shadow: 0 0 20px #fde047;
   }

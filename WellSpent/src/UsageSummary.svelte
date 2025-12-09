@@ -60,16 +60,33 @@
     transition: 0.2s;
     padding: 2px;
   }
-  .edit-btn:hover { opacity: 1; transform: scale(1.1); }
+  .edit-btn:hover { 
+     opacity: 1;
+     transform: scale(1.1);
+     }
 
   .metric-container {
     display: flex; justify-content: center; align-items: baseline; gap: 0.5rem;
   }
 
-  .big-number { font-size: 2.5rem; font-weight: 800; color: var(--text-main); transition: 0.3s; }
-  .big-number.danger { color: #ef4444; } /* Red if over limit */
+  .big-number { 
+   font-size: 2.5rem;
+   font-weight: 800; 
+   color: var(--text-main); 
+   transition: 0.3s; 
+  }
+
+  .big-number.danger { color: #ef4444; } 
   
-  .unit { font-size: 1.2rem; color: var(--primary); font-weight: 600; }
+  .unit {
+     font-size: 1.2rem;
+     color: var(--primary);
+     font-weight: 600;
+     }
   
-  .limit-display { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; }
+  .limit-display {
+     font-size: 0.85rem; 
+     color: var(--text-muted); 
+     margin-top: 0.5rem; 
+     }
 </style>

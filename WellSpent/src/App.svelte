@@ -340,7 +340,7 @@
   .fade-in { animation: fadeIn 0.3s ease; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* --- DASHBOARD GRID --- */
+
   .dashboard-grid {
     display: grid; 
     grid-template-columns: 1fr 1.5fr 1fr; 
@@ -348,18 +348,16 @@
     max-width: 1500px; 
     margin: 0 auto; 
     padding: 0 1.5rem; 
-    align-items: stretch; /* Forces all columns to be equal height */
+    align-items: stretch; 
   }
 
-  /* Shared column styles for alignment */
   .col-left, .col-center, .col-right {
     display: flex;
     flex-direction: column;
-    height: 100%; /* Important: makes the column fill the grid cell */
+    height: 100%; 
     gap: 1.5rem;
   }
 
-  /* Left Column: Pushes cost card to bottom */
   .col-left {
     justify-content: space-between; 
   }
@@ -368,8 +366,7 @@
     flex-direction: column;
     gap: 1.5rem;
   }
-
-  /* Center Column: Utility Manager fills space */
+  
   .utility-manager { 
     background: var(--bg-card); 
     border: 1px solid var(--border); 
@@ -379,7 +376,6 @@
     display: flex;
     flex-direction: column;
   }
-  
 
   .col-right { 
     border-radius: 12px; 
@@ -401,13 +397,13 @@
   .manager-header h3 { margin: 0; font-size: 1.1rem; }
   .master-add-btn { background: var(--primary); color: rgb(2, 2, 2); border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.9rem; }
   
-  /* Make device list fill the now-taller utility manager */
+
   .device-list { 
     display: flex; 
     flex-direction: column; 
     gap: 0.5rem; 
     overflow-y: auto; 
-    flex: 1; /* Fills the rest of the card */
+    flex: 1; 
   }
   
   .device-item { background: transparent; border: 1px solid var(--border); border-radius: 8px; padding: 0.8rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: var(--text-muted); transition: 0.2s; }
