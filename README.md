@@ -44,7 +44,7 @@ supposed to indicate how much water you have left out of the limit that
 you chose. Obviously, this is not hardcoded to cut off your supply but
 rather a way to encourage you to develop good habits.
 
-!(assets/images/media/image1.png)
+![Sketch 1](assets/images/media/image1.png)
 
 ### Sketch 2:
 
