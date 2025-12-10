@@ -100,9 +100,11 @@ expected cost and target costs are additionally calculated based on what
 the limit you set for the month to be which can be edited using the
 pencil icon.
 
-<img src="assets/images/media/image6.png" alt="Scenery1" width="200" />
-<img src="assets/images/media/image7.png" alt="Scenery2" width="200" />
-<img src="assets/images/media/image8.png" alt="Editing limit" width="200" />
+<div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+    <img src="assets/images/media/image6.png" alt="Scenery1" width="200" style="margin: 0;" />
+    <img src="assets/images/media/image7.png" alt="Scenery2" width="200" style="margin: 0;" />
+    <img src="assets/images/media/image8.png" alt="Editing limit" width="200" style="margin: 0;" />
+</div>
 
 Moving onto the middle column- this section shows us the different
 utilities that use water that we have. The top card shows the appliance
