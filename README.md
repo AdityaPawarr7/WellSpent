@@ -100,34 +100,34 @@ expected cost and target costs are additionally calculated based on what
 the limit you set for the month to be which can be edited using the
 pencil icon.
 
-<img src="assets/images/media/image6.png" alt="Scenery1" width="500" />
-<img src="assets/images/media/image7.png" alt="Scenery2" width="500" />
-<img src="assets/images/media/image8.png" alt="Editing limit" width="500" />
+<img src="assets/images/media/image6.png" alt="Scenery1" width="200" />
+<img src="assets/images/media/image7.png" alt="Scenery2" width="200" />
+<img src="assets/images/media/image8.png" alt="Editing limit" width="200" />
 
 Moving onto the middle column- this section shows us the different
 utilities that use water that we have. The top card shows the appliance
 that is selected and its status.
 
-<img src="assets/images/media/image9.png" alt="Utility selected" width="500" />
+<img src="assets/images/media/image9.png" alt="Utility selected" width="200" />
 
 If we click Start, it's going to light up green, and the shower icon
 will turn blue indicating that the utility is in use.
 
-<img src="assets/images/media/image10.png" alt="Status" width="500" />
+<img src="assets/images/media/image10.png" alt="Status" width="200" />
 
 A new utility can be added by using the "+Add Utility" button which
 allows to add a new utility and classify it into the defined types so it
 can be graphed. The limits set for the new utility are factored into the
 calculation of the monthly limits and the donation amount.
 
-<img src="assets/images/media/image11.png" alt="Add Utility" width="500" />
+<img src="assets/images/media/image11.png" alt="Add Utility" width="200" />
 
 Now, let's move onto the right column, this consist of a live activity
 graph which updates the flow of water over the last 30 seconds
 constantly along with a static bar graph which is aimed to show the
 utility-by-utility distribution of water consumption.
 
-<img src="assets/images/media/image12.png" alt="Graphs" width="500" />
+<img src="assets/images/media/image12.png" alt="Graphs" width="200" />
 
 The "View History" tab is a great way for us as users to ensure that we
 can see how our water consumption has changed based upon new habits or
