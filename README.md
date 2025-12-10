@@ -16,10 +16,10 @@ would be more inclined to be careful and set limits. This is what led to
 the creation of WellSpent.
 
 WellSpent is a utility tracking app/website that is meant to track a
-household\'s water usage. Ideas for this were taken from Duke Energy\'s
+household's water usage. Ideas for this were taken from Duke Energy's
 dashboard that I use for my electricity and gas usage. Based upon the
 usage, I tend to alter the usage and be more considerate of the
-appliances I\'m using.
+appliances I'm using.
 
 WellSpent aims to capture the usage of water for a household and
 breaking it down into specifics such individual tap usage, shower
@@ -44,7 +44,7 @@ supposed to indicate how much water you have left out of the limit that
 you chose. Obviously, this is not hardcoded to cut off your supply but
 rather a way to encourage you to develop good habits.
 
-![Sketch 1](assets/images/media/image1.png)
+<img src="assets/images/media/image1.png" alt="Sketch 1" width="500" />
 
 ### Sketch 2:
 
@@ -56,7 +56,7 @@ idea behind this is if you go over the limit you set, the environment
 will turn into a desert helping you visualize the effects of your
 overconsumption of water.
 
-![Sketch 2](assets/images/media/image2.png)
+<img src="assets/images/media/image2.png" alt="Sketch 2" width="500" />
 
 ### Sketch 3:
 
@@ -68,7 +68,7 @@ water. The history page helps us visualize the usage of water over the
 last couple of months along with specific appliance-based usage which
 helps you understand the breakdown of how you're using your water.
 
-![Sketch 3](assets/images/media/image3.png)
+<img src="assets/images/media/image3.png" alt="Sketch 3" width="500" />
 
 ### Sketch 4:
 
@@ -81,7 +81,7 @@ in liters. The final prototype moves the Water Usage tab to the left
 column and adds in a live flow activity graph and an appliance-specific
 usage graph.
 
-![Sketch 4](assets/images/media/image4.png)
+<img src="assets/images/media/image4.png" alt="Sketch 4" width="500" />
 
 ## Final Prototype:
 
@@ -89,7 +89,7 @@ The final prototype consists of the main dashboard, view history, and
 donate tabs. The main dashboard is split into 3 specific columns. I'll
 go into detail below.
 
-![Final Prototype](assets/images/media/image5.png)
+<img src="assets/images/media/image5.png" alt="Final Prototype" width="500" />
 
 For the Left Column, we have two possible scenarios for the scenery
 screen. Depending on if you've exceeded the limit or not, the scenery
@@ -100,34 +100,34 @@ expected cost and target costs are additionally calculated based on what
 the limit you set for the month to be which can be edited using the
 pencil icon.
 
-![Scenery1](assets/images/media/image6.png)
-![Scenery2](assets/images/media/image7.png)
-![Editing limit](assets/images/media/image8.png)
+<img src="assets/images/media/image6.png" alt="Scenery1" width="500" />
+<img src="assets/images/media/image7.png" alt="Scenery2" width="500" />
+<img src="assets/images/media/image8.png" alt="Editing limit" width="500" />
 
 Moving onto the middle column- this section shows us the different
 utilities that use water that we have. The top card shows the appliance
 that is selected and its status.
 
-![Utility selected](assets/images/media/image9.png)
+<img src="assets/images/media/image9.png" alt="Utility selected" width="500" />
 
 If we click Start, it's going to light up green, and the shower icon
 will turn blue indicating that the utility is in use.
 
-![Status](assets/images/media/image10.png)
+<img src="assets/images/media/image10.png" alt="Status" width="500" />
 
 A new utility can be added by using the "+Add Utility" button which
 allows to add a new utility and classify it into the defined types so it
 can be graphed. The limits set for the new utility are factored into the
 calculation of the monthly limits and the donation amount.
 
-![Add Utility](assets/images/media/image11.png)
+<img src="assets/images/media/image11.png" alt="Add Utility" width="500" />
 
 Now, let's move onto the right column, this consist of a live activity
 graph which updates the flow of water over the last 30 seconds
 constantly along with a static bar graph which is aimed to show the
 utility-by-utility distribution of water consumption.
 
-![Graphs](assets/images/media/image12.png)
+<img src="assets/images/media/image12.png" alt="Graphs" width="500" />
 
 The "View History" tab is a great way for us as users to ensure that we
 can see how our water consumption has changed based upon new habits or
@@ -138,7 +138,7 @@ for different utilities to show the exact usage and cost. This feature,
 however is not implemented in the final prototype but the static data
 shows how effective it can be.
 
-![History](assets/images/media/image13.png)
+<img src="assets/images/media/image13.png" alt="History" width="500" />
 
 The donation page is something I'm quite proud of. It allows the user to
 pay their water bill at the end of each month and have two scenarios.
@@ -148,7 +148,7 @@ pay their water bill at the end of each month and have two scenarios.
 Your water usage was below the limit you set. You can pay the amount you
 owe and have the option to make a donation towards water.org.
 
-![Under Limit](assets/images/media/image14.png)
+<img src="assets/images/media/image14.png" alt="Under Limit" width="500" />
 
 ### Scenario 2:
 
@@ -161,7 +161,7 @@ and not wasting.
 
 Yes, the link to water.org works!
 
-![Over Limit](assets/images/media/image15.png)
+<img src="assets/images/media/image15.png" alt="Over Limit" width="500" />
 
 ## Use of AI:
 
