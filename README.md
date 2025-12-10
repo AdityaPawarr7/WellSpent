@@ -44,7 +44,7 @@ supposed to indicate how much water you have left out of the limit that
 you chose. Obviously, this is not hardcoded to cut off your supply but
 rather a way to encourage you to develop good habits.
 
-(assets/images/media/image1.png)
+!(assets/images/media/image1.png)
 
 ### Sketch 2:
 
@@ -56,7 +56,7 @@ idea behind this is if you go over the limit you set, the environment
 will turn into a desert helping you visualize the effects of your
 overconsumption of water.
 
-(assets/images/media/image2.png)
+!(assets/images/media/image2.png)
 
 ### Sketch 3:
 
@@ -68,7 +68,7 @@ water. The history page helps us visualize the usage of water over the
 last couple of months along with specific appliance-based usage which
 helps you understand the breakdown of how you're using your water.
 
-(assets/images/media/image3.png)
+!(assets/images/media/image3.png)
 
 ### Sketch 4:
 
@@ -81,7 +81,7 @@ in liters. The final prototype moves the Water Usage tab to the left
 column and adds in a live flow activity graph and an appliance-specific
 usage graph.
 
-(assets/images/media/image4.png)
+!(assets/images/media/image4.png)
 
 ## Final Prototype:
 
@@ -89,7 +89,7 @@ The final prototype consists of the main dashboard, view history, and
 donate tabs. The main dashboard is split into 3 specific columns. I'll
 go into detail below.
 
-(assets/images/media/image5.png)
+!(assets/images/media/image5.png)
 
 For the Left Column, we have two possible scenarios for the scenery
 screen. Depending on if you've exceeded the limit or not, the scenery
@@ -100,34 +100,34 @@ expected cost and target costs are additionally calculated based on what
 the limit you set for the month to be which can be edited using the
 pencil icon.
 
-(assets/images/media/image6.png)
-(assets/images/media/image7.png)
-(assets/images/media/image8.png)
+!(assets/images/media/image6.png)
+!(assets/images/media/image7.png)
+!(assets/images/media/image8.png)
 
 Moving onto the middle column- this section shows us the different
 utilities that use water that we have. The top card shows the appliance
 that is selected and its status.
 
-(assets/images/media/image9.png)
+!(assets/images/media/image9.png)
 
 If we click Start, it's going to light up green, and the shower icon
 will turn blue indicating that the utility is in use.
 
-(assets/images/media/image10.png)
+!(assets/images/media/image10.png)
 
 A new utility can be added by using the "+Add Utility" button which
 allows to add a new utility and classify it into the defined types so it
 can be graphed. The limits set for the new utility are factored into the
 calculation of the monthly limits and the donation amount.
 
-(assets/images/media/image11.png)
+!(assets/images/media/image11.png)
 
 Now, let's move onto the right column, this consist of a live activity
 graph which updates the flow of water over the last 30 seconds
 constantly along with a static bar graph which is aimed to show the
 utility-by-utility distribution of water consumption.
 
-(assets/images/media/image12.png)
+!(assets/images/media/image12.png)
 
 The "View History" tab is a great way for us as users to ensure that we
 can see how our water consumption has changed based upon new habits or
@@ -138,7 +138,7 @@ for different utilities to show the exact usage and cost. This feature,
 however is not implemented in the final prototype but the static data
 shows how effective it can be.
 
-(assets/images/media/image13.png)
+!(assets/images/media/image13.png)
 
 The donation page is something I'm quite proud of. It allows the user to
 pay their water bill at the end of each month and have two scenarios.
@@ -148,7 +148,7 @@ pay their water bill at the end of each month and have two scenarios.
 Your water usage was below the limit you set. You can pay the amount you
 owe and have the option to make a donation towards water.org.
 
-(assets/images/media/image14.png)
+!(assets/images/media/image14.png)
 
 ### Scenario 2:
 
@@ -157,12 +157,11 @@ your water bill and are recommended a donation amount which is based
 upon how much you've exceeded the limit in liters by and matching the
 cost that you would pay for it essentially multiplying the exceeded
 amount by 2. This allows for us to be more mindful when consuming water
-and not wasting.\
-\
+and not wasting.
+
 Yes, the link to water.org works!
 
-![A screenshot of a donation page AI-generated content may be
-incorrect.](assets/images/media/image15.png)
+!(assets/images/media/image15.png)
 
 ## Use of AI:
 
