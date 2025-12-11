@@ -2,7 +2,7 @@
 
 Publicly Hosted Website: https://well-spent.vercel.app/
 
-Youtube Demo Link:
+Youtube Demo Link: https://youtu.be/N70b3cvkIBY
 
 ## Description:
 
@@ -82,6 +82,14 @@ column and adds in a live flow activity graph and an appliance-specific
 usage graph.
 
 <img src="assets/images/media/image4.png" alt="Sketch 4" width="500" />
+
+## Interview and Feedback
+
+For this project, I interviewed my roommate Cameron Pocisk who is a fourth year computer science major currently co-oping at Siemens. He used to be on the UI/UX team for his last rotation. Cameron and I are really passionate about big projects like these and it made my interview process to be easy and reassured me of my ideas. 
+
+I asked him about what idea I should tackle and he emphasized that the idea that I should choose should be something that helps everyone and something that everyone can take part in doing as small change adds up really quick. After this, I introduced my idea of WellSpent and he loved it as the inspiration (Duke energy's high gas bill) affected us last winter. He said that an idea like this really helps quantify and visualize how much water goes to waste and how much of it can be saved. I proceeded to show him my sketches to which he said they were really in-detail and could help a bit with making it simple for a user to use. I implemented this feedback in my final prototype which is shown below. 
+
+Finally, when I showed him my final prototype— he commented on how it is intuitive for him to use and helps him visualize his usage of water and where he can be better about it. The donation match feature caught his eye and he commented on it saying it would help him be responsible if he had to match a donation for the amount he goes over by. 
 
 ## Final Prototype:
 
